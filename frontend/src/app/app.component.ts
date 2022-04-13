@@ -54,13 +54,14 @@ export class AppComponent {
         this.characterProfile = null;
         if(this.selectedCharacter.length != 0){
           this.showLoader('profile-spinner')
+          this.marvelAPIService.getCharacterProfile(this.selectedCharacter[0]).subscribe((character: ICharacterProfile) =>{
+            this.hideLoader("profile-spinner")
+            this.characterProfile = character;
+          })
         }       
     }
 
-this.marvelAPIService.getCharacterProfile(this.selectedCharacter[0]).subscribe((character: ICharacterProfile) =>{
-  this.hideLoader("profile-spinner")
-  this.characterProfile = character;
-})
+
   }
   hideLoader(id: string){
     document.getElementById(id)

@@ -11,7 +11,7 @@
     <div  fxFlex="40" fxLayout="column" fxLayoutAlign="center center">
             <div >
                 <span class="sub-heading"><h2>List of Characters</h2></span>
-                <cdk-virtual-scroll-viewport itemSize="50" class="characters-viewport" cdkDropList #todoList="cdkDropList" [cdkDropListData]="characters" [cdkDropListConnectedTo]="doneList" (cdkDropListDropped)="drop($event)" >
+                <cdk-virtual-scroll-viewport itemSize="50" class="characters-viewport" cdkDropList #characterList="cdkDropList" [cdkDropListData]="characters" [cdkDropListConnectedTo]="characterSelect" (cdkDropListDropped)="drop($event)" >
                     <div *ngFor="let character of characters" class="characters-item" cdkDrag>{{character.name}}</div>
                     <div id="characters-spinner"><mat-spinner></mat-spinner></div>
                   </cdk-virtual-scroll-viewport>
@@ -25,7 +25,7 @@
         <div >
             <span class="sub-heading"><h2>Drag Character Here</h2></span>
             
-            <cdk-virtual-scroll-viewport itemSize="50" class="character-select-viewport" cdkDropList #doneList="cdkDropList" [cdkDropListData]="selectedCharacter" [cdkDropListConnectedTo]="todoList"
+            <cdk-virtual-scroll-viewport itemSize="50" class="character-select-viewport" cdkDropList #characterSelect="cdkDropList" [cdkDropListData]="selectedCharacter" [cdkDropListConnectedTo]="characterList"
              (cdkDropListDropped)="drop($event)" (change)="change($event)" >
             <div class="character-select-item" *ngFor="let character of selectedCharacter"  cdkDrag [cdkDragDisabled]="character.disabled">{{character.name}}</div>
           </cdk-virtual-scroll-viewport>
