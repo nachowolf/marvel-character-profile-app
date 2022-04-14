@@ -20,9 +20,7 @@
     opacity: 0;
   }
   
-  .header-text{
-    margin: auto;
-  }
+
   
   .success {
     background-color: #7dc855;
@@ -45,13 +43,6 @@
   
   .sub-heading{
     text-align: center;
-  }
-
-  .character-profile-image{
-    border: 1px solid #ec8080;
-    border-radius: 4px;
-    padding: 5px;
-    width: 150px;
   }
   
   @media (max-width:600px) {
