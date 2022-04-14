@@ -1,16 +1,23 @@
-# marvel-app
+# Marvel Character Profile App
 
-marvel-app is an exposed api for the Marvel Api 
+This application uses data from the marvel api to display character profiles. 
 
 ## Installation
 
-Use NPM to install files and run.
+Clone app onto local machine.
 
-```bash
-npm install
-```
+Navigate to the backend folder and run npm install.
+
+Run npm start or nodemon.
+
+Navigate to frontend folder and run npm install.
+
+Run ng serve
 
 ## Usage
+# Main app serves on port 4200.
+http://localhost:4200/marvel-character-profile
+
 
 ```requests
 GET
