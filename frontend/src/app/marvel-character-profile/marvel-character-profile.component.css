@@ -158,5 +158,12 @@
       border: 1px solid #922323;
       width: 40vw;
     }
+
+    .character-profile-image{
+      border: 1px solid #ec8080;
+      border-radius: 4px;
+      padding: 5px;
+      width: 150px;
+    }
   
   }
