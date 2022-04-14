@@ -20,10 +20,6 @@
     opacity: 0;
   }
   
-  .header-text{
-    margin: auto;
-  }
-  
   .success {
     background-color: #7dc855;
     margin-top: 1vh;
@@ -53,6 +49,8 @@
     padding: 5px;
     width: 150px;
   }
+
+
   
   @media (max-width:600px) {
     .characters-viewport {
