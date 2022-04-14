@@ -16,7 +16,7 @@ export class MarvelCharacterProfileComponent implements OnInit {
   selectedCharacter :ICharacter[] = [];
   previousIndex: number;
   characters : ICharacter[] = [];
-  characterProfile: ICharacterProfile;
+  characterProfile: ICharacterProfile = null;
 
   constructor(private marvelAPIService: MarvelApiService) { }
 
@@ -28,9 +28,18 @@ export class MarvelCharacterProfileComponent implements OnInit {
     this.marvelAPIService.getCharacters().subscribe((character: ICharacter[]) =>{
       if(character){
         this.hideLoader("characters-spinner")
+        if(this.characterProfile == null){
         this.characters = character;     
-      }     
-    })    
+        }
+        else{
+          this.characters = character.filter(char => char.name !== this.characterProfile.characters.name);
+        }
+      }
+          
+    })
+
+
+
   }
 
   drop(event: CdkDragDrop<string[]>) {
