@@ -25,18 +25,27 @@ import { MatProgressSpinnerModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
+import { RouterModule, Routes } from '@angular/router';
+import { MarvelCharacterProfileComponent } from './marvel-character-profile/marvel-character-profile.component';
 
 
-
+const routes: Routes = [
+  {path: 'marvel-character-profile', component: MarvelCharacterProfileComponent},
+  {path: '**', redirectTo: 'marvel-character-profile', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
+    MarvelCharacterProfileComponent,
 
 
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -58,6 +67,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
